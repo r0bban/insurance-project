@@ -1,86 +1,177 @@
-body{
+body {
     display: flex;
     justify-content: center;
     margin: 0px;
     background-color: #ebebeb;
 }
+
 .grid-container {
     display: grid;
     grid-template-columns: auto;
     grid-auto-rows: minmax(50px, min-content);
-    gap: 1rem;
-    width: 80vw;
+    width: 75vw;
+    max-width: 80rem;
     background-color: chartreuse;
-    grid-template-areas:
-    "header"
-    "nav"
-    "main"
-    "onboarding-flow"
-    "page-end"
+    grid-template-areas: "header" "nav" "main" "onboarding-flow" "page-end"
 }
 
-.grid-container > * {
-    position: relative;
-    /* z-index: -2; */
+.grid-container>* {
     border: black;
     border-width: 1px;
     border-style: solid;
+    max-width: 80rem;
+    width: 75vw;
 }
-
 
 .top-section {
     grid-area: header;
+}
+
+button.call-to-action {
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-weight: bolder;
+    border-radius: 2em;
+    border-style: solid;
 }
 
 .top-nav {
     grid-area: nav;
 }
 
-.main{
-    /* position: relative; */
+section.main p {
+    font-family: arial;
+    font-size: 1.25em;
+    text-align: center;
+    font-weight: bold;
+    color: #44403f;
+}
+
+section.main .main-top p {
+    text-align: left;
+}
+
+section.main h2 {
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+    font-weight: bolder;
+    margin-top: 0;
+}
+
+section.main {
     grid-area: main;
     background-color: #fab131;
-    /* min-height: 300px; */
     display: flex;
     flex-wrap: wrap;
 }
 
-.main > article {
+section.main>article {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border: black;
-    border-width: 1px;
-    border-style: solid;
-    padding: 40px;
+    justify-content: center;
+    width: 100%;
+    padding: 10%;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
-.main article:first-of-type {
+section.main article:first-of-type {
     background-color: #a9a19e;
-    }
-.main article > div:first-of-type > div:nth-child(1), div:nth-child(2) {
-    width: 50%;
-    background-color: blueviolet;
-}    
+    padding-bottom: 0;
+}
 
-.main article > div {
+.main>article>div {
     display: flex;
     justify-content: space-between;
-    /* border: black;
-    border-width: 1px;
-    border-style: solid; */
+    min-width: 100%;
 }
 
-.main article div * {
-    border: black;
-    border-width: 1px;
-    border-style: solid;    
+.main>article .main-top div {
+    width: 45%;
 }
 
+.card-container {
+    position: relative;
+    top: 12rem;
+    margin-top: -7rem;
+}
 
+.card h3 {
+    margin-top: -1rem;
+    text-align: center;
+    font-size: 1.5em;
+}
 
+div.card>p {
+    color: #727070;
+    font-size: 1em;
+    margin-bottom: 2.5rem;
+}
 
+div.card {
+    width: 18vw;
+    max-width: 19rem;
+    background-color: rgb(255, 255, 255);
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    margin-top: 2.3rem;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0;
+}
+
+.card div.icon-img {
+    position: relative;
+    height: 11vw;
+    max-height: 11.7rem;
+    top: -2rem;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 0;
+}
+
+.card div.icon-img.child {
+    background-image: url("/img/child.png");
+    background-position: center 18px;
+    background-repeat: no-repeat;
+    background-size: 38%;
+    background-color: #c7ddea;
+}
+
+.card div.icon-img.adult {
+    background-image: url("/img/adult.png");
+    background-position: center 18px;
+    background-repeat: no-repeat;
+    background-size: 39%;
+    background-color: #fab131;
+}
+
+.card div.icon-img.senior {
+    background-image: url("/img/old.png");
+    background-position: center 18px;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-color: #f17949;
+}
+
+.main article:nth-of-type(2) {
+    padding-top: 16rem;
+    padding-bottom: 6rem;
+}
+
+.main>article:nth-of-type(2)>div {
+    max-width: 50%;
+    min-width: min-content;
+    flex-wrap: wrap;
+}
+
+.main>article>div.one-column * {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
 .onboarding-flow {
     grid-area: onboarding-flow;
